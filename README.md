@@ -17,7 +17,7 @@ Mở `http://localhost:4173`.
 1. Đẩy code lên nhánh `main` của `aerovfx/LoAIapp`.
 2. Vào **Settings → Pages → Build and deployment**.
 3. Chọn **GitHub Actions** làm Source.
-4. Workflow sẽ tự xuất bản tại <https://aerovfx.github.io/LoAIapp/>.
+4. GitHub Pages sẽ tự xuất bản nội dung nhánh `main` tại <https://aerovfx.github.io/LoAIapp/>.
 
 ## Desktop release
 
