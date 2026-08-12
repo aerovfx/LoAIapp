@@ -58,10 +58,10 @@ button:focus-visible, a:focus-visible, textarea:focus-visible { outline: 3px sol
 .app-shell { display: flex; height: 100dvh; }
 
 .sidebar { width: var(--sidebar-width); flex: 0 0 var(--sidebar-width); display: flex; flex-direction: column; padding: 20px 14px 12px; background: var(--panel); border-right: 1px solid var(--line); z-index: 30; }
-.sidebar-top { height: 44px; display: flex; align-items: center; justify-content: space-between; padding: 0 6px 0 9px; }
+.sidebar-top { min-height: 52px; display: flex; align-items: center; justify-content: space-between; padding: 0 6px 0 7px; }
 .brand { display: inline-flex; align-items: center; gap: 9px; font-size: 20px; font-weight: 750; letter-spacing: -0.04em; }
-.brand-mark { display: grid; place-items: center; width: 38px; height: 38px; overflow: hidden; border: 1px solid rgba(160, 93, 255, .55); border-radius: 12px; background: #0b0713; box-shadow: 0 0 24px var(--glow); }
-.brand-mark img { width: 47px; height: 47px; object-fit: contain; }
+.brand-mark { display: grid; place-items: center; width: 42px; height: 42px; flex: 0 0 42px; padding: 2px; border: 1px solid rgba(160, 93, 255, .48); border-radius: 12px; background: #0b0713; box-shadow: 0 0 24px var(--glow); }
+.brand-mark img { display: block; width: 100%; height: 100%; object-fit: contain; }
 .brand-word { font-size: 21px; font-style: italic; letter-spacing: -.06em; }
 .brand-word i { font-style: inherit; color: var(--text); }
 .brand-word b { color: var(--accent-strong); }
@@ -116,8 +116,8 @@ button:focus-visible, a:focus-visible, textarea:focus-visible { outline: 3px sol
 .hero-orbit { position: relative; width: 126px; height: 126px; display: grid; place-items: center; margin-bottom: 22px; }
 .orbit-ring { position: absolute; inset: 1px; border: 1px solid color-mix(in srgb, var(--accent-strong) 24%, transparent); border-radius: 50%; animation: orbit 12s linear infinite; }
 .orbit-ring::after { content: ""; position: absolute; top: 8px; right: 7px; width: 7px; height: 7px; border-radius: 50%; background: var(--accent-strong); box-shadow: 0 0 12px var(--accent); }
-.hero-mark { width: 92px; height: 92px; display: grid; place-items: center; overflow: hidden; border: 1px solid color-mix(in srgb, var(--accent-strong) 55%, transparent); border-radius: 50%; background: #08050e; box-shadow: 0 0 36px var(--glow); }
-.hero-mark img { width: 105px; height: 105px; object-fit: contain; }
+.hero-mark { width: 104px; height: 104px; display: grid; place-items: center; border-radius: 24px; background: transparent; filter: drop-shadow(0 0 18px var(--glow)); }
+.hero-mark img { display: block; width: 100%; height: 100%; object-fit: contain; }
 .spark { position: absolute; border-radius: 50%; background: var(--accent-strong); }
 .spark-one { width: 4px; height: 4px; left: -6px; bottom: 16px; }
 .spark-two { width: 3px; height: 3px; right: -9px; top: 29px; opacity: .55; }
@@ -142,8 +142,8 @@ button:focus-visible, a:focus-visible, textarea:focus-visible { outline: 3px sol
 .message.user { justify-content: flex-end; }
 .message-bubble { max-width: min(610px, 88%); font-size: 15px; line-height: 1.65; }
 .user .message-bubble { padding: 11px 16px; border: 1px solid var(--line); border-radius: 18px 18px 5px 18px; background: var(--card-solid); }
-.assistant-avatar { width: 34px; height: 34px; flex: 0 0 auto; display: grid; place-items: center; overflow: hidden; border: 1px solid color-mix(in srgb, var(--accent) 55%, var(--line)); border-radius: 11px; background: #08050e; box-shadow: 0 0 16px var(--glow); }
-.assistant-avatar img { width: 39px; height: 39px; object-fit: contain; }
+.assistant-avatar { width: 36px; height: 36px; flex: 0 0 auto; display: grid; place-items: center; padding: 2px; border: 1px solid color-mix(in srgb, var(--accent) 55%, var(--line)); border-radius: 11px; background: #08050e; box-shadow: 0 0 16px var(--glow); }
+.assistant-avatar img { display: block; width: 100%; height: 100%; object-fit: contain; }
 .assistant .message-bubble { padding-top: 3px; }
 .assistant .message-bubble p { margin: 0; }
 .typing { display: inline-flex; gap: 4px; align-items: center; height: 24px; }
@@ -195,8 +195,7 @@ button:focus-visible, a:focus-visible, textarea:focus-visible { outline: 3px sol
 @media (max-width: 520px) {
   .welcome { padding-top: 22px; }
   .hero-orbit { width: 74px; height: 74px; margin-bottom: 18px; }
-  .hero-mark { width: 55px; height: 55px; border-radius: 18px; }
-  .hero-mark svg { width: 36px; }
+  .hero-mark { width: 62px; height: 62px; border-radius: 16px; }
   .welcome h1 { font-size: 37px; }
   .hero-copy { margin: 16px 0 21px; font-size: 13px; }
   .desktop-break { display: none; }
