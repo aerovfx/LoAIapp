@@ -23,7 +23,7 @@ Mở `http://localhost:4173`.
 
 Các nút **Tải ứng dụng** trỏ đến:
 
-<https://github.com/aerovfx/LoAIapp/releases/latest>
+<https://github.com/aerovfx/LoAIapp/releases>
 
 Tạo một GitHub Release và đính kèm bộ cài `.dmg`, `.exe` hoặc `.AppImage`; website sẽ tự dẫn tới release mới nhất mà không cần đổi mã nguồn.
 
