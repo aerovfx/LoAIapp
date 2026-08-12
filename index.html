@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="LoAI — trợ lý AI hiểu cách bạn làm việc, viết và sáng tạo." />
+    <meta name="theme-color" content="#f4f3ed" />
+    <title>LoAI — Nghĩ lớn hơn. Làm nhanh hơn.</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Chuyển tới nội dung</a>
+
+    <div class="app-shell">
+      <div class="scrim" data-close-sidebar hidden></div>
+      <aside class="sidebar" id="sidebar" aria-label="Thanh điều hướng">
+        <div class="sidebar-top">
+          <a class="brand" href="./" aria-label="Trang chủ LoAI">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 32 32"><path d="M9 7.5v11c0 3.4 2.7 6 6 6h8"/><path d="M15.5 7.5v8.6c0 1.4 1.1 2.5 2.5 2.5h5"/><circle cx="23" cy="8" r="3"/></svg>
+            </span>
+            <span>LoAI</span>
+          </a>
+          <button class="icon-button mobile-only" type="button" data-close-sidebar aria-label="Đóng menu">
+            <svg viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></svg>
+          </button>
+        </div>
+
+        <button class="new-chat" type="button" data-new-chat>
+          <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+          <span>Cuộc trò chuyện mới</span>
+          <kbd>⌘ K</kbd>
+        </button>
+
+        <nav class="sidebar-nav" aria-label="Điều hướng chính">
+          <a class="nav-item is-active" href="#chat">
+            <svg viewBox="0 0 24 24"><path d="M20 15a4 4 0 0 1-4 4H8l-4 3V7a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4Z"/></svg>
+            Trò chuyện
+          </a>
+          <a class="nav-item" href="#kham-pha">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5Z"/></svg>
+            Khám phá
+            <span class="badge">Mới</span>
+          </a>
+        </nav>
+
+        <div class="history">
+          <p class="eyebrow">Gần đây</p>
+          <button class="history-item" type="button">Lên kế hoạch ra mắt sản phẩm</button>
+          <button class="history-item" type="button">Tóm tắt biên bản cuộc họp</button>
+          <button class="history-item" type="button">Ý tưởng nội dung tháng 8</button>
+        </div>
+
+        <div class="sidebar-footer">
+          <a class="download-card" href="https://github.com/aerovfx/LoAIapp/releases/latest" target="_blank" rel="noopener noreferrer">
+            <span class="download-icon"><svg viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 19h14"/></svg></span>
+            <span><strong>Tải LoAI Desktop</strong><small>Windows, macOS & Linux</small></span>
+            <svg class="arrow" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+          </a>
+          <button class="profile" type="button">
+            <span class="avatar">DV</span>
+            <span><strong>Khách của LoAI</strong><small>Gói miễn phí</small></span>
+            <svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></svg>
+          </button>
+        </div>
+      </aside>
+
+      <main class="main" id="main">
+        <header class="topbar">
+          <button class="icon-button menu-button" type="button" data-open-sidebar aria-label="Mở menu" aria-controls="sidebar" aria-expanded="false">
+            <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          </button>
+          <button class="model-picker" type="button" aria-label="Chọn mô hình">
+            <span>LoAI One</span>
+            <span class="status-dot"></span>
+            <svg viewBox="0 0 24 24"><path d="m8 10 4 4 4-4"/></svg>
+          </button>
+          <div class="topbar-actions">
+            <a class="desktop-cta" href="https://github.com/aerovfx/LoAIapp/releases/latest" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 19h14"/></svg>
+              Tải ứng dụng
+            </a>
+            <button class="icon-button" type="button" data-theme-toggle aria-label="Đổi giao diện sáng tối">
+              <svg class="sun-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+              <svg class="moon-icon" viewBox="0 0 24 24"><path d="M20 15.3A9 9 0 0 1 8.7 4a9 9 0 1 0 11.3 11.3Z"/></svg>
+            </button>
+          </div>
+        </header>
+
+        <section class="chat" id="chat" aria-live="polite">
+          <div class="welcome" data-welcome>
+            <div class="hero-orbit" aria-hidden="true">
+              <div class="orbit-ring"></div>
+              <span class="spark spark-one"></span><span class="spark spark-two"></span>
+              <div class="hero-mark">
+                <svg viewBox="0 0 48 48"><path d="M13 10v17c0 6 4.8 11 11 11h11"/><path d="M24 10v12c0 2.8 2.2 5 5 5h7"/><circle cx="36" cy="11" r="4"/></svg>
+              </div>
+            </div>
+            <p class="hero-kicker">TRỢ LÝ AI DÀNH CHO BẠN</p>
+            <h1>Mình có thể giúp gì<br />cho bạn hôm nay?</h1>
+            <p class="hero-copy">Từ ý tưởng đầu tiên đến sản phẩm hoàn chỉnh —<br class="desktop-break" /> cùng bạn suy nghĩ, sáng tạo và làm việc tốt hơn.</p>
+
+            <div class="suggestions" aria-label="Câu hỏi gợi ý">
+              <button type="button" data-prompt="Lên kế hoạch ra mắt sản phẩm trong 30 ngày">
+                <span class="suggestion-icon coral"><svg viewBox="0 0 24 24"><path d="M14 4 6 12l6 6 8-8-6-6Z"/><path d="m4 20 4-4"/></svg></span>
+                <span><strong>Lên kế hoạch</strong><small>Biến mục tiêu thành các bước rõ ràng</small></span>
+                <svg class="arrow" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+              </button>
+              <button type="button" data-prompt="Viết một bài giới thiệu LoAI thật cuốn hút">
+                <span class="suggestion-icon lilac"><svg viewBox="0 0 24 24"><path d="m4 20 4.5-1 10-10a2.1 2.1 0 0 0-3-3l-10 10L4 20Z"/><path d="m13.5 7.5 3 3"/></svg></span>
+                <span><strong>Viết & sáng tạo</strong><small>Nội dung chỉn chu, đúng giọng của bạn</small></span>
+                <svg class="arrow" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+              </button>
+              <button type="button" data-prompt="Phân tích những xu hướng AI nổi bật gần đây">
+                <span class="suggestion-icon mint"><svg viewBox="0 0 24 24"><path d="M4 19V9m6 10V5m6 14v-7m4 7H2"/></svg></span>
+                <span><strong>Phân tích dữ liệu</strong><small>Nhìn thấy điều quan trọng trong vài giây</small></span>
+                <svg class="arrow" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="conversation" data-conversation hidden></div>
+        </section>
+
+        <div class="composer-wrap">
+          <form class="composer" data-composer>
+            <label class="sr-only" for="message">Nhắn tin cho LoAI</label>
+            <textarea id="message" rows="1" maxlength="2000" placeholder="Hỏi LoAI bất cứ điều gì…"></textarea>
+            <div class="composer-actions">
+              <div>
+                <button class="tool-button" type="button" aria-label="Đính kèm tệp"><svg viewBox="0 0 24 24"><path d="m12 5-6.5 6.5a4 4 0 0 0 5.7 5.7L18 10.4a2.5 2.5 0 0 0-3.5-3.5L8 13.4a1 1 0 0 0 1.4 1.4l6-6"/></svg></button>
+                <button class="mode-button" type="button"><svg viewBox="0 0 24 24"><path d="M12 3a7 7 0 0 0-4 12.7V19h8v-3.3A7 7 0 0 0 12 3Z"/><path d="M9 22h6"/></svg> Suy luận</button>
+              </div>
+              <button class="send-button" type="submit" aria-label="Gửi tin nhắn" disabled><svg viewBox="0 0 24 24"><path d="m6 12 6-6 6 6M12 6v12"/></svg></button>
+            </div>
+          </form>
+          <p class="disclaimer">LoAI có thể mắc lỗi. Hãy kiểm tra lại thông tin quan trọng.</p>
+        </div>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
