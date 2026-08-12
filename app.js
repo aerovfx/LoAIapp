@@ -10,8 +10,7 @@ const conversation = document.querySelector('[data-conversation]');
 const chat = document.querySelector('.chat');
 
 const storedTheme = localStorage.getItem('loai-theme');
-const preferredDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-root.dataset.theme = storedTheme || (preferredDark ? 'dark' : 'light');
+root.dataset.theme = storedTheme || 'dark';
 
 function setSidebar(open) {
   sidebar.classList.toggle('is-open', open);
@@ -36,7 +35,7 @@ function appendMessage(role, content) {
   const item = document.createElement('article');
   item.className = `message ${role}`;
   if (role === 'assistant') {
-    item.innerHTML = `<span class="assistant-avatar" aria-hidden="true">L</span><div class="message-bubble"><p>${content}</p></div>`;
+    item.innerHTML = `<span class="assistant-avatar" aria-hidden="true"><img src="assets/owl.png" alt="" /></span><div class="message-bubble"><p>${content}</p></div>`;
   } else {
     item.innerHTML = `<div class="message-bubble">${escapeHtml(content)}</div>`;
   }
